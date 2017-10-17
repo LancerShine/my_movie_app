@@ -19,6 +19,7 @@ class App extends Component {
         key={movie.id}
         genres={movie.genres}
         synopsis={movie.synopsis}
+        url = {movie.url}
       />
     });
     return movies;

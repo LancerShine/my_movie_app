@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router';
 import './Movie.css';
 
-function Movie({title, poster, genres, synopsis}){
+function Movie({title, poster, genres, synopsis, url}){
     return (
       <div className="Movie">
         <div className="Movie__Columns">
           <MoviePoster poster={poster} alt={title}/>
         </div>
         <div className="Movie__Columns">
-          <h1>{title}</h1>
+          <h1>title:{title}</h1>
+          <h3>url:{url}</h3>
           <div className="Movie__Genres">
-              {genres.map((genre, index)=><MovieGenre genre={genre} key={index}/>)}
+              genres:{genres.map((genre, index)=><MovieGenre genre={genre} key={index}/>)}
           </div>
           <p className="Movie__Synopsis">
-            {synopsis}
+            synopsis:{synopsis}
           </p>
         </div>
       </div>
